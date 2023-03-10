@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D2B66F6-C18D-4A50-AABF-17A60768C762}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>doan</RootNamespace>
+    <AssemblyName>doan</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\CaLamBLL.cs" />
+    <Compile Include="BLL\ChiTietHDBanBLL.cs" />
+    <Compile Include="BLL\KhachHangBLL.cs" />
+    <Compile Include="BLL\LoaiSanPhamBLL.cs" />
+    <Compile Include="BLL\NhaCungCapBLL.cs" />
+    <Compile Include="BLL\NhanVienBLL.cs" />
+    <Compile Include="BLL\PhanCongBLL.cs" />
+    <Compile Include="BLL\SanPhamBLL.cs" />
+    <Compile Include="CaLam.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietHDBan.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietHDNhap.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CaLamDAL.cs" />
+    <Compile Include="DAL\ChiTietHDBanDAL.cs" />
+    <Compile Include="DAL\KhachHangDAL.cs" />
+    <Compile Include="DAL\LoaiSanPhamDAL.cs" />
+    <Compile Include="DAL\NhaCungCapDAL.cs" />
+    <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\PhanCongDAL.cs" />
+    <Compile Include="DAL\SanPhamDAL.cs" />
+    <Compile Include="DTO\CaLamDTO.cs" />
+    <Compile Include="DTO\ChiTietHDBanDTO.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\LoaiSanPhamDTO.cs" />
+    <Compile Include="DTO\NhaCungCapDTO.cs" />
+    <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\PhanCongDTO.cs" />
+    <Compile Include="DTO\SanPhamDTO.cs" />
+    <Compile Include="frmNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNV.Designer.cs">
+      <DependentUpon>frmNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HDBanHang.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HDNhapHang.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiSanPham.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhanCong.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLNSEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SanPham.cs">
+      <DependentUpon>QLNSEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="test.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCustomer.Designer.cs">
+      <DependentUpon>UCCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCHome.Designer.cs">
+      <DependentUpon>UCHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCLSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCLSP.Designer.cs">
+      <DependentUpon>UCLSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTaiKhoan.Designer.cs">
+      <DependentUpon>UCTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCProfile.Designer.cs">
+      <DependentUpon>UCProfile.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmNV.resx">
+      <DependentUpon>frmNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCustomer.resx">
+      <DependentUpon>UCCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCHome.resx">
+      <DependentUpon>UCHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCLSP.resx">
+      <DependentUpon>UCLSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCProfile.resx">
+      <DependentUpon>UCProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTaiKhoan.resx">
+      <DependentUpon>UCTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="QLNSEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLNSEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QLNSEntities.edmx.diagram">
+      <DependentUpon>QLNSEntities.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QLNSEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNSEntities.edmx</DependentUpon>
+      <LastGenOutput>QLNSEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QLNSEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNSEntities.edmx</DependentUpon>
+      <LastGenOutput>QLNSEntities.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\Xem.jpg" />
+    <None Include="Resources\customer.jpg" />
+    <None Include="Resources\Find.jpg" />
+    <None Include="Resources\home.jpg" />
+    <None Include="Resources\add.jpg" />
+    <None Include="Resources\tin tức.jpg" />
+    <None Include="Resources\report.jpg" />
+    <None Include="Resources\Người dùng.jpg" />
+    <None Include="Resources\tải xuống.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
